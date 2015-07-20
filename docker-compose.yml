@@ -1,0 +1,21 @@
+haproxy:
+    build: ./haproxy
+    image: aschmid00/haproxy
+    links:
+        - node1:node1
+        - node2:node2
+    ports:
+        - "80:80"
+        - "70:70"
+    restart: always
+node1:
+    build: ./node
+    ports:
+        - "8000"
+    restart: always
+
+node2:
+    build: ./node
+    ports:
+        - "8000"
+    restart: always
