@@ -1,6 +1,5 @@
 haproxy:
     build: ./haproxy
-    image: aschmid00/haproxy
     links:
         - node1:node1
         - node2:node2
